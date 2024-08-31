@@ -5,38 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contrato Gen</title>
     <link rel="stylesheet" href="assets/style/style.css">
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/style/bootstrap.min.css">
     <script src="assets/js/main.js"></script>
 
 </head>
 <body>
-    <!----Um formulario com nome e email - ao clicar no botão enviar,os dados get abre outra página contrato.html com os dados enviados e um botão que ao clicar, gera um pdf.---->
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <form action="contrato.html" method="get">
-                    <div class="form-group">
-                        <label for="nome">Nome</label>
-                        <input type="text" name="nome" id="nome" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email" class="form-control">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                </form>
-            </div>
+    <h1>Contrato</h1>
+    <!--- Um form primeiro um radio button para checar se o cliente é Pessoa física ou juridic usando um radio button -->
+    <form action="contrato.html" method="get">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="tipo" id="pessoaFisica" value="pessoaFisica" checked >
+            <label class="form-check-input" for="pessoaFisica">Pessoa Física</label>
         </div>
-    </div>
+        <div class="form-check">
+            <input class="form-check-" type="radio" name="tipo" id="pessoaJuridica" value="pessoaJuridica">
+            <label class="form-check-input" for="pessoaJuridica">Pessoa Jurídica</label>
+        </div>
+
+        <!--- Input do número cpf ou cnpj usando uma mascara -->
+        <div class="form-group">
+            <label for="cpfCnpj"><span id="cpfCnpjId">CPF</span></label>
+            <input type="text" class="form-control" id="cpfCnpj" name="cpfCnpj">
+        </div>
+        <hr>
+
+        <!--- Inputs de dados do cliente -->
+        <div class="form-group">
+            <label for="nome">Nome do Clinte</label>
+            <input type="text" class="form-control" id="nome" name="nome">
+        </div>
+        
+
+       
 
 
 
 
 
-                    
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script>
+            tipoDePessoa();
+        </script>
+
+
+
+    <script src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>
